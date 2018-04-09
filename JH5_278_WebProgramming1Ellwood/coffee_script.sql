@@ -1,0 +1,14 @@
+drop table COFFEES;
+drop table SUPPLIERS;
+create table COFFEES (COF_NAME varchar(32),SUP_ID int,PRICE float,SALES int,TOTAL int);
+create table SUPPLIERS (SUP_ID int,SUP_NAME varchar(40),STREET varchar(40),CITY varchar(20),STATE char(2), ZIP char(5));
+insert into COFFEES values('Colombian', 00101, 7.99, 0, 0);
+insert into COFFEES values('French_Roast', 00049, 8.99, 0, 0);
+insert into COFFEES values('Espresso', 00150, 9.99, 0, 0);
+insert into COFFEES values('Colombian_Decaf', 00101, 8.99, 0, 0);
+insert into COFFEES values('French_Roast_Decaf', 00049, 9.99, 0, 0);
+insert into SUPPLIERS values(49, 'Superior Coffee', '1 Party Place', 'Mendocino', 'CA', '95460');
+insert into SUPPLIERS values(101, 'Acme, Inc.', '99 Market Street','Groundsville', 'CA', '95199');
+insert into SUPPLIERS values(150, 'The High Ground', '100 Coffee Lane','Meadows', 'CA', '93966');
+select * from COFFEES;
+select * from SUPPLIERS;
