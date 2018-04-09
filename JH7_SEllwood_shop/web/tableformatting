@@ -1,0 +1,52 @@
+<table border='1'>
+  <tr>
+    <th>header 1</th>
+	<th>col 2</th>
+	<th>third</th>
+  </tr>
+  <tr>
+    <td colspan='3'>data1</td>
+  </tr>
+  <tr>
+    <td>coldata1</td>
+	<td>coldata2</td>
+	<td>coldata3</td>
+  </tr>
+</table>
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers
+ON Orders.CustomerID=Customers.CustomerID
+where Orders.OrderID = 10248;
+
+Select Customer.first_name, Customer.last_name, Customer.address,
+from Customer
+inner join Order
+on Customer.userid = Order.userid_fk
+inner join Order_item
+on Order_item.order_fk = Order.order_pk
+inner join Web_item
+on Order_item.web_pate_fk = Web_item.web_page_item_pk
+where Web_item.title = var;
+
+        <c:forEach var="customer" items="${customers}"   >
+        <c:forEach var="order" items="${customer.orders}"   >
+        <c:forEach var="item" items="${order.order_items}"   >
+              <h3>Order Items</h3>
+                
+                    Order name: ${item.web_item.title}
+                    <br/>Price: ${item.web_item.price}
+                    <br/>quantity: ${item.quantity}
+                    <br/>Order date: ${order.date}
+                    <br/><img src="${item.web_item.imageUrl}" height="125" /> 
+                    
+                    <ul>
+
+ <c:forEach var="xorder" items="${orders1}"   >  
+                          <br/>Order Number: ${xorder.order_pk}
+                            <br/>Order Date: ${xorder.orders.date}
+
+
+
+<c:forEach var="item" items= "${itempk}"   >

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <listener>
+        <listener-class>
+             candidate_database.GlobalConnectionPool
+        </listener-class>
+    </listener>
+    <context-param>
+        <param-name>db_remote</param-name>
+        <param-value>true</param-value>
+<!--        needs to be false to put in on russet since ruseet it not remote to the db-->
+    </context-param>
+    <context-param>
+        <param-name>db_userid</param-name>
+        <param-value>sellwood</param-value>
+    </context-param>
+    <context-param>
+        <param-name>db_password</param-name>
+        <param-value>qBZ38XDAzHwu</param-value>
+    </context-param>
+    
+    
+    <servlet>
+        <servlet-name>WebPageServlet</servlet-name>
+        <servlet-class>servlets.WebPageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewShoppingCartServlet</servlet-name>
+        <servlet-class>servlets.ViewShoppingCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>servlets.CheckoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>servlets.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WebPageServlet</servlet-name>
+        <url-pattern>/WebPageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewShoppingCartServlet</servlet-name>
+        <url-pattern>/ViewShoppingCartServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/CheckoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/AdminServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
